@@ -1,0 +1,145 @@
+<h3><strong>Guide: Creating a JupyterLite Site and Linking It from Canvas</strong></h3>
+<p>This guide documents the process we followed to publish Jupyter notebooks via GitHub Pages and make them accessible to students through Canvas.</p>
+<h4><strong>Step 1: Create a GitHub Repository</strong></h4>
+<ol>
+    <li>Log in to GitHub.</li>
+    <li>Click <strong>New Repository</strong>.</li>
+    <li>Give it a name, for example:</li>
+</ol>
+<p>MACO-Sets-01</p>
+<ol>
+    <li>Create the repository.</li>
+</ol>
+<h4><strong>Step 2: Create a JupyterLite Site</strong></h4>
+<p>Instead of starting from scratch, use the JupyterLite template.</p>
+<ol>
+    <li>Visit the JupyterLite demo template repository.</li>
+    <li>Click <strong>Use this template</strong>.</li>
+    <li>Create a new repository from the template.</li>
+</ol>
+<p>This automatically includes:</p>
+<ul>
+    <li>JupyterLite</li>
+    <li>GitHub Actions workflows</li>
+    <li>GitHub Pages configuration</li>
+</ul>
+<h4><strong>Step 3: Upload Notebooks</strong></h4>
+<ol>
+    <li>Open the repository.</li>
+    <li>Go to the <strong>content</strong> folder.</li>
+    <li>Click <strong>Add file &rarr; Upload files</strong>.</li>
+    <li>Upload your notebooks.</li>
+</ol>
+<p>Example:</p>
+<p>content/</p>
+<p>├── Week01.ipynb</p>
+<p>├── Week02.ipynb</p>
+<p>└── Exercises.ipynb</p>
+<ol>
+    <li>Commit the changes.</li>
+</ol>
+<h4><strong>Step 4: Configure GitHub Pages</strong></h4>
+<p>Open:</p>
+<p>Settings &rarr; Pages</p>
+<p>Under <strong>Build and deployment</strong>:</p>
+<p>Source = GitHub Actions</p>
+<p>Do NOT use:</p>
+<p>Deploy from a Branch</p>
+<p>for the JupyterLite template.</p>
+<h4><strong>Step 5: Enable GitHub Actions Permissions</strong></h4>
+<p>Open:</p>
+<p>Settings &rarr; Actions &rarr; General</p>
+<p>Scroll to:</p>
+<p>Workflow permissions</p>
+<p>Select:</p>
+<p>Read and write permissions</p>
+<p>Click:</p>
+<p>Save</p>
+<h4><strong>Step 6: Allow GitHub to Build</strong></h4>
+<p>Open:</p>
+<p>Actions</p>
+<p>You should see a workflow called something similar to:</p>
+<p>Build and Deploy</p>
+<p>Wait until you see:</p>
+<p>✅ Build</p>
+<p>✅ Deploy</p>
+<p>If necessary:</p>
+<p>Re-run jobs &rarr; Re-run all jobs</p>
+<h4><strong>Step 7: Confirm the Site is Live</strong></h4>
+<p>Open:</p>
+<p>Settings &rarr; Pages</p>
+<p>You should see:</p>
+<p>Your site is live at:</p>
+<p><a href="https://yourusername.github.io/REPOSITORY-NAME/">https://YOURUSERNAME.github.io/REPOSITORY-NAME/</a></p>
+<p>Example:</p>
+<p><a href="https://dbarnett404.github.io/MACO-Sets-01/">https://dbarnett404.github.io/MACO-Sets-01/</a></p>
+<h4><strong>Step 8: Launch JupyterLite</strong></h4>
+<p>Open:</p>
+<p><a href="https://yourusername.github.io/REPOSITORY-NAME/lab/">https://YOURUSERNAME.github.io/REPOSITORY-NAME/lab/</a></p>
+<p>Example:</p>
+<p><a href="https://dbarnett404.github.io/MACO-Sets-01/lab/">https://dbarnett404.github.io/MACO-Sets-01/lab/</a></p>
+<p>A JupyterLab-style interface should appear.</p>
+<p>The notebooks should be visible in the left-hand file browser.</p>
+<h4><strong>Step 9: Remove Example Notebooks (Optional)</strong></h4>
+<p>The template includes example files such as:</p>
+<p>javascript.ipynb</p>
+<p>p5.ipynb</p>
+<p>python.ipynb</p>
+<p>To delete:</p>
+<ol>
+    <li>Open the file.</li>
+    <li>Click the <strong>...</strong> menu.</li>
+    <li>Select <strong>Delete file</strong>.</li>
+    <li>Commit the change.</li>
+</ol>
+<p>Do not delete:</p>
+<p>pyodide/</p>
+<p>as it contains components required for Python support.</p>
+<h4><strong>Step 10: Get a Direct Notebook Link</strong></h4>
+<p>Open a notebook in JupyterLite.</p>
+<p>For example:</p>
+<p>Week01.ipynb</p>
+<p>Copy the URL from the browser.</p>
+<p>It will look something like:</p>
+<p><a href="https://yourusername.github.io/REPOSITORY-NAME/lab/index.html?path=Week01.ipynb">https://YOURUSERNAME.github.io/REPOSITORY-NAME/lab/index.html?path=Week01.ipynb</a></p>
+<p>``</p>
+<p>This launches directly into the notebook.</p>
+<h4><strong>Step 11: Add to Canvas</strong></h4>
+<p>In Canvas:</p>
+<p>Modules &rarr; +</p>
+<p>Choose:</p>
+<p>External URL</p>
+<p>Paste either:</p>
+<p><strong>Entire JupyterLite Site</strong></p>
+<p><a href="https://yourusername.github.io/REPOSITORY-NAME/lab/">https://YOURUSERNAME.github.io/REPOSITORY-NAME/lab/</a></p>
+<p>``</p>
+<p>or</p>
+<p><strong>Direct Notebook Link</strong></p>
+<p><a href="https://yourusername.github.io/REPOSITORY-NAME/lab/index.html?path=Week01.ipynb">https://YOURUSERNAME.github.io/REPOSITORY-NAME/lab/index.html?path=Week01.ipynb</a></p>
+<p>``</p>
+<p>Tick:</p>
+<p>Load in a new tab</p>
+<p>Click:</p>
+<p>Add Item</p>
+<p><strong>Common Error</strong></p>
+<p><strong>GitHub 404 Page</strong></p>
+<p>If students see:</p>
+<p>404 File not found</p>
+<p>check that the repository name in the URL exactly matches the actual repository.</p>
+<p>For example:</p>
+<p>❌</p>
+<p><a href="https://dbarnett404.github.io/MACO-Sets/">https://dbarnett404.github.io/MACO-Sets/</a></p>
+<p>``</p>
+<p>✅</p>
+<p><a href="https://dbarnett404.github.io/MACO-Sets-01/">https://dbarnett404.github.io/MACO-Sets-01/</a></p>
+<p>The repository name and URL must match exactly.</p>
+<p><strong>Recommended Structure for Teaching</strong></p>
+<p>content/</p>
+<p>├── Week01 Introduction.ipynb</p>
+<p>├── Week01 Exercises.ipynb</p>
+<p>├── Week02 Introduction.ipynb</p>
+<p>├── Week02 Exercises.ipynb</p>
+<p>└── README.md</p>
+<p>Then create one Canvas link per notebook so students go directly to the activity they need to complete.</p>
+<p>This approach requires no server, no JupyterHub, and students can run Python entirely within their browser.</p>
+<p>&nbsp;</p>
